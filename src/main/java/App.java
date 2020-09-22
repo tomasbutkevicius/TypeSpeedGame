@@ -3,8 +3,11 @@ import java.util.concurrent.TimeUnit;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("some day this will be a game");
-        System.out.println("Please type something");
+        SentenceGenerator sentenceGenerator = new SentenceGenerator();
+
+        String sentence = sentenceGenerator.getSentence();
+
+        System.out.println(sentence);
 
         TimeWatch watch = TimeWatch.start();
         Scanner scanner = new Scanner(System.in);
