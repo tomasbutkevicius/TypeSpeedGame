@@ -14,7 +14,7 @@ public class SentenceGenerator {
         int firstVerb = randNum.nextInt(Verbs.length);
         int secondNoun = randNum.nextInt(Nouns.length);
 
-        return Nouns[firstNoun] + " " + Verbs[firstVerb] + " " + Nouns[secondNoun] + ".";
+        return Nouns[firstNoun] + " " + Verbs[firstVerb] + " " + Nouns[secondNoun] + ". ";
     }
 
     public String getSentence() {
