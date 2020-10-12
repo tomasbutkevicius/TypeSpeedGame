@@ -1,6 +1,6 @@
 package Model;
 
-public class Player {
+public class Player implements Comparable<Player> {
     String name;
     Long wordsPerMinute;
 
@@ -31,9 +31,11 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "name='" + name + '\'' +
-                ", wordsPerMinute=" + wordsPerMinute +
-                '}';
+        return "'" + name + '\'' + ", wordsPerMinute=" + wordsPerMinute ;
+    }
+
+    @Override
+    public int compareTo(Player player) {
+        return -Long.valueOf(this.wordsPerMinute).compareTo(Long.valueOf(player.getWordsPerMinute()));
     }
 }

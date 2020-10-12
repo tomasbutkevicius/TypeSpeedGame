@@ -4,6 +4,7 @@ import Model.Player;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -23,15 +24,10 @@ public class App {
             playerList.add(player);
         }
 
-
-//        long passedTimeInSeconds = watch.time(TimeUnit.SECONDS);
-        String typedWords;
         String sentence;
-
         Integer totalWords = 0;
         Long seconds = 0L;
         int repeat = 4;
-
 
         while (repeat != 0) {
             String[] words;
@@ -41,23 +37,27 @@ public class App {
             totalWords += words.length;
             repeat = repeat - 1;
         }
+
         System.out.println();
         System.out.println("Repeat:");
         TimeWatch watch = TimeWatch.start();
-        typedWords = scanner.nextLine();
+        String typedWords = scanner.nextLine();
         seconds = watch.time(TimeUnit.SECONDS);
         System.out.println("total words: " + totalWords);
         Long wordsPerMinute = (totalWords * 60) / seconds;
         player.setWordsPerMinute(wordsPerMinute);
 
+        Collections.sort(playerList);
+        printPlayerList(playerList, player);
+    }
 
-        for (Player playerFromList : playerList) {
-            if (playerFromList.equals(player)) {
-                System.out.println("------------");
-                System.out.println(playerFromList.toString());
-                System.out.println("------------");
+    private static void printPlayerList(ArrayList<Player> playerList, Player player) {
+        for(int i=0;i<playerList.size(); i++){
+            System.out.print(" Place: " + (i+1) + ", ");
+            if (playerList.get(i).equals(player)) {
+                System.out.println("(you) " + playerList.get(i).toString());
             } else {
-                System.out.println(playerFromList.toString());
+                System.out.println(playerList.get(i).toString());
             }
         }
     }
@@ -75,8 +75,8 @@ public class App {
     }
 
     private static void generatePlayers(ArrayList<Player> players) {
-        String[] names = {"Smith", "proGamer3000", "Jordon", "Rambo", "Stallone" };
-        Long[] wordsPerMinute = {151L, 182L, 140L, 163L, 138L};
+        String[] names = {"Average computer typist", "proGamer3000", "Jordon", "Rambo", "Stallone" };
+        Long[] wordsPerMinute = {41L, 100L, 50L, 90L, 60L};
 
         for (int i = 0; i < names.length; i++) {
             players.add(new Player(names[i], wordsPerMinute[i]));
