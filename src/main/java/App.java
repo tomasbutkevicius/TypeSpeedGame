@@ -12,54 +12,8 @@ import java.util.concurrent.TimeUnit;
 public class App {
     public static void main(String[] args) {
         SentenceGenerator sentenceGenerator = new SentenceGenerator();
-        ArrayList<Player> playerList = getPlayers();
-        System.out.println("Enter your name");
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        Player player = new Player(name);
-
-        if (PlayerController.getPlayerByName(playerList, name) != null) {
-            player = PlayerController.getPlayerByName(playerList, name);
-        } else {
-            playerList.add(player);
-        }
-
-        String sentence;
-        Integer totalWords = 0;
-        Long seconds = 0L;
-        int repeat = 4;
-
-        while (repeat != 0) {
-            String[] words;
-            sentence = sentenceGenerator.getSentence();
-            System.out.print(sentence.substring(0, 1).toUpperCase() + sentence.substring(1));
-            words = sentence.split("\\s");
-            totalWords += words.length;
-            repeat = repeat - 1;
-        }
-
-        System.out.println();
-        System.out.println("Repeat:");
-        TimeWatch watch = TimeWatch.start();
-        String typedWords = scanner.nextLine();
-        seconds = watch.time(TimeUnit.SECONDS);
-        System.out.println("total words: " + totalWords);
-        Long wordsPerMinute = (totalWords * 60) / seconds;
-        player.setWordsPerMinute(wordsPerMinute);
-
-        Collections.sort(playerList);
-        printPlayerList(playerList, player);
-    }
-
-    private static void printPlayerList(ArrayList<Player> playerList, Player player) {
-        for(int i=0;i<playerList.size(); i++){
-            System.out.print(" Place: " + (i+1) + ", ");
-            if (playerList.get(i).equals(player)) {
-                System.out.println("(you) " + playerList.get(i).toString());
-            } else {
-                System.out.println(playerList.get(i).toString());
-            }
-        }
+        ArrayList<Player> players = getPlayers();
+        Menu.launch(players);
     }
 
     public static ArrayList<Player> getPlayers() {
@@ -75,7 +29,7 @@ public class App {
     }
 
     private static void generatePlayers(ArrayList<Player> players) {
-        String[] names = {"Average computer typist", "proGamer3000", "Jordon", "Rambo", "Stallone" };
+        String[] names = {"Average computer typist", "proGamer3000", "Jordan", "Rambo", "Stallone" };
         Long[] wordsPerMinute = {41L, 100L, 50L, 90L, 60L};
 
         for (int i = 0; i < names.length; i++) {
