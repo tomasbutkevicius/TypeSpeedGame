@@ -1,6 +1,8 @@
 package Model;
 
-public class Player implements Comparable<Player> {
+import java.io.Serializable;
+
+public class Player implements Comparable<Player>, Serializable {
     String name;
     Long wordsPerMinute;
     Double accuracy;

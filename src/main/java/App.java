@@ -1,7 +1,9 @@
 import Controller.PlayerController;
+import Model.Leaderboard;
 import Model.Player;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,16 +12,16 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         SentenceGenerator sentenceGenerator = new SentenceGenerator();
         ArrayList<Player> players = getPlayers();
-        Menu.launch(players);
+        Leaderboard leaderboard = new Leaderboard(players);
+        Menu.launch(leaderboard);
     }
 
     public static ArrayList<Player> getPlayers() {
         ArrayList<Player> players = new ArrayList<Player>();
         File file = new File("players.txt");
-
         if (file.exists() && !file.isDirectory()) {
             getPlayersFromFile(players, file);
         } else {

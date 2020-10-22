@@ -1,4 +1,5 @@
 import Controller.PlayerController;
+import Model.Leaderboard;
 import Model.Player;
 
 import java.util.ArrayList;
@@ -8,7 +9,8 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Race {
-    public static Boolean start(ArrayList<Player> players){
+    public static Boolean start(Leaderboard leaderboard){
+        ArrayList<Player> players = leaderboard.getPlayers();
         Player player = PlayerController.createPlayer(players);
         if(player == null){
             return false;
@@ -45,7 +47,7 @@ public class Race {
             Long wordsPerMinute = (givenWords.size() * 60) / seconds;
             player.setWordsPerMinute(wordsPerMinute);
             player.setAccuracy(accuracy);
-            Printer.printPlayerList(players, player);
+            Printer.printPlayerList(leaderboard, player);
         }
         System.out.println("Enter any key to continue...");
         scanner.nextLine();
