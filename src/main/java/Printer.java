@@ -13,6 +13,7 @@ public class Printer {
             } else {
                 System.out.println(players.get(i).toString());
             }
+            System.out.println();
         }
     }
 
@@ -21,6 +22,7 @@ public class Printer {
         for (int i = 0; i < players.size(); i++) {
             System.out.print(" Place: " + (i + 1) + ", ");
             System.out.println(players.get(i).toString());
+            System.out.println();
         }
     }
 }

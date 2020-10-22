@@ -3,10 +3,12 @@ package Model;
 public class Player implements Comparable<Player> {
     String name;
     Long wordsPerMinute;
+    Double accuracy;
 
-    public Player(String name, Long wordsPerMinute) {
+    public Player(String name, Long wordsPerMinute, Double accuracy) {
         this.name = name;
         this.wordsPerMinute = wordsPerMinute;
+        this.accuracy = accuracy;
     }
 
     public Player(String name) {
@@ -21,6 +23,14 @@ public class Player implements Comparable<Player> {
         this.name = name;
     }
 
+    public Double getAccuracy() {
+        return accuracy;
+    }
+
+    public void setAccuracy(Double accuracy) {
+        this.accuracy = accuracy;
+    }
+
     public Long getWordsPerMinute() {
         return wordsPerMinute;
     }
@@ -31,7 +41,7 @@ public class Player implements Comparable<Player> {
 
     @Override
     public String toString() {
-        return "'" + name + '\'' + ", wordsPerMinute=" + wordsPerMinute ;
+        return "'" + name + '\'' + "\n|wordsPerMinute=" + wordsPerMinute + "; " + accuracy + "% accuracy|";
     }
 
     @Override

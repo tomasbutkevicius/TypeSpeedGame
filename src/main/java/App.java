@@ -31,9 +31,10 @@ public class App {
     private static void generatePlayers(ArrayList<Player> players) {
         String[] names = {"Average computer typist", "proGamer3000", "Jordan", "Rambo", "Stallone" };
         Long[] wordsPerMinute = {41L, 100L, 50L, 90L, 60L};
+        Double[] accuracies = {92D, 98D, 88D, 99D, 90D};
 
         for (int i = 0; i < names.length; i++) {
-            players.add(new Player(names[i], wordsPerMinute[i]));
+            players.add(new Player(names[i], wordsPerMinute[i], accuracies[i]));
         }
     }
 
@@ -47,7 +48,8 @@ public class App {
                 String[] data = line.split("\\s");
                 String name = data[0];
                 Long wordsPerMinute = Long.parseLong(data[1]);
-                Player player = new Player(name, wordsPerMinute);
+                Double accuracy = Double.parseDouble(data[2]);
+                Player player = new Player(name, wordsPerMinute, accuracy);
                 players.add(player);
             }
         } catch (Exception error) {

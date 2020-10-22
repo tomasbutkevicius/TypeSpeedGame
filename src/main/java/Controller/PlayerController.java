@@ -10,6 +10,10 @@ public class PlayerController {
         return players.stream().filter(player -> player.getName().equals(name)).findFirst().orElse(null);
     }
 
+    public static Boolean removePlayerFromList(ArrayList<Player> players, Player player){
+        return players.remove(player);
+    }
+
     public static Player createPlayer(ArrayList<Player> players){
         System.out.println("Enter player name");
         Scanner scanner = new Scanner(System.in);
