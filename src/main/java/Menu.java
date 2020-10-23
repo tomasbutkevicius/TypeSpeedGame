@@ -1,8 +1,7 @@
 import Model.Leaderboard;
-import Model.Player;
+import Model.Race;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -13,20 +12,26 @@ public class Menu {
         while (!command.equals("exit")) {
             printMenuInformation();
             command = scanner.next();
-            leaderboard = handleUserAction(leaderboard, command);
+            switch (MenuCommand.valueOf(command.toUpperCase())){
+                case START:
+                    Race typeRace = new TypeRace(4, leaderboard, new SentenceGenerator());
+                    typeRace.start();
+                    break;
+                case STATS:
+                    Printer.printStats(leaderboard);
+                    break;
+                case SAVE:
+                    ObjectIO.WriteObjectToFile(leaderboard);
+                    break;
+                case LOAD:
+                    leaderboard = ObjectIO.readObjectFromFile(leaderboard);
+                    break;
+                case EXIT:
+                    break;
+                default:
+                    System.out.println("Invalid command");
+            }
         }
-    }
-
-    private static Leaderboard handleUserAction(Leaderboard leaderboard, String command) throws IOException, ClassNotFoundException {
-        if(command.equalsIgnoreCase("exit")){
-            System.exit(0);
-        }
-        try {
-            leaderboard = MenuCommand.valueOf(command.toUpperCase()).execute(leaderboard);
-        } catch (IllegalArgumentException exp){
-            System.out.println("Invalid command");
-        }
-        return leaderboard;
     }
 
     private static void printMenuInformation() {

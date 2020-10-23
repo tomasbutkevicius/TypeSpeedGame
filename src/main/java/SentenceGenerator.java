@@ -8,16 +8,12 @@ public class SentenceGenerator {
             "walks", "controls", "can't find", "swims to", "dances near", "sings to", "screams to", "looks to", "falls from"
     };
 
-    private String createSentence() {
+    public String getSentence() {
         Random randNum = new Random();
         int firstNoun = randNum.nextInt(Nouns.length);
         int firstVerb = randNum.nextInt(Verbs.length);
         int secondNoun = randNum.nextInt(Nouns.length);
 
         return Nouns[firstNoun] + " " + Verbs[firstVerb] + " " + Nouns[secondNoun] + ". ";
-    }
-
-    public String getSentence() {
-        return createSentence();
     }
 }

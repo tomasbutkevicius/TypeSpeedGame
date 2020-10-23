@@ -12,11 +12,12 @@ import java.util.concurrent.TimeUnit;
 public class TypeRace extends Race {
     private int sentenceCount;
     private Leaderboard leaderboard;
-    private SentenceGenerator sentenceGenerator = new SentenceGenerator();
+    private SentenceGenerator sentenceGenerator;
 
-    public TypeRace(int sentenceCount, Leaderboard leaderboard) {
+    public TypeRace(int sentenceCount, Leaderboard leaderboard, SentenceGenerator sentenceGenerator) {
         this.sentenceCount = sentenceCount;
         this.leaderboard = leaderboard;
+        this.sentenceGenerator = sentenceGenerator;
     }
 
     public void start(){
