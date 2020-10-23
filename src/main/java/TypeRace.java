@@ -1,29 +1,29 @@
 import Controller.PlayerController;
 import Model.Leaderboard;
 import Model.Player;
+import Model.Race;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class Race {
+public class TypeRace extends Race {
     private int sentenceCount;
     private Leaderboard leaderboard;
     private SentenceGenerator sentenceGenerator = new SentenceGenerator();
 
-    public Race(int sentenceCount, Leaderboard leaderboard) {
+    public TypeRace(int sentenceCount, Leaderboard leaderboard) {
         this.sentenceCount = sentenceCount;
         this.leaderboard = leaderboard;
     }
 
-    public Boolean start(){
+    public void start(){
         ArrayList<Player> players = leaderboard.getPlayers();
         Player player = PlayerController.createPlayer(players);
         if(player == null){
-            return false;
+            return;
         }
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> givenWords = new ArrayList<>();
@@ -33,6 +33,10 @@ public class Race {
         System.out.println();
         System.out.println("Repeat:");
 
+        handleUserInput(players, player, scanner, givenWords);
+    }
+
+    private void handleUserInput(ArrayList<Player> players, Player player, Scanner scanner, ArrayList<String> givenWords) {
         TimeWatch watch = TimeWatch.start();
         String input = scanner.nextLine();
         Long seconds = watch.time(TimeUnit.SECONDS);
@@ -52,7 +56,6 @@ public class Race {
         }
         System.out.println("Enter any key to continue...");
         scanner.nextLine();
-        return true;
     }
 
     private void createSentences(ArrayList<String> givenWords) {

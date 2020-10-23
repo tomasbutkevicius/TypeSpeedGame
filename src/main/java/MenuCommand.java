@@ -1,4 +1,5 @@
 import Model.Leaderboard;
+import Model.Race;
 
 import java.io.IOException;
 
@@ -7,8 +8,8 @@ public enum MenuCommand {
                 {
                     @Override
                     public Leaderboard execute(Leaderboard leaderboard) {
-                        Race race = new Race(4, leaderboard);
-                        race.start();
+                        Race typeRace = new TypeRace(4, leaderboard);
+                        typeRace.start();
                         return leaderboard;
                     }
                 },
