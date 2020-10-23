@@ -13,6 +13,6 @@ public class GrammarChecker {
                 return 0D;
             }
         }
-        return ((double)givenWords.size() - mistakes)*100 / givenWords.size();
+        return ((double)givenWords.size() - mistakes)*100D / givenWords.size();
     }
 }

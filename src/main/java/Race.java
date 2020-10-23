@@ -2,6 +2,7 @@ import Controller.PlayerController;
 import Model.Leaderboard;
 import Model.Player;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -40,6 +41,8 @@ public class Race {
         ArrayList<String> typedWords = new ArrayList(Arrays.asList(input.split("\\s")));
 
         Double accuracy = GrammarChecker.getAccuracy(givenWords, typedWords);
+        final DecimalFormat df = new DecimalFormat("#0.00");
+        accuracy = Double.parseDouble(df.format(accuracy));
         if(accuracy < 30){
             System.out.println("Accuracy was less than 50%. Player disqualified");
             PlayerController.removePlayerFromList(players, player);

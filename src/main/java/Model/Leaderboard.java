@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Leaderboard implements Serializable {
-    private  ArrayList<Player> players;
+    private ArrayList<Player> players;
 
     public Leaderboard(ArrayList<Player> players) {
         this.players = players;
