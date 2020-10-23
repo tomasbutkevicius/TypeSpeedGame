@@ -4,6 +4,7 @@ import Model.Race;
 import java.io.IOException;
 
 public enum MenuCommand {
+    //No logic in enums
         START
                 {
                     @Override

@@ -23,17 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c216a23d-80c0-43f7-93ab-bd822be73e69" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lastSave.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lastSave.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GrammarChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GrammarChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MenuCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MenuCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TypeRace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MenuCommand$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MenuCommand$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MenuCommand$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MenuCommand$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MenuCommand$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MenuCommand$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MenuCommand$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MenuCommand$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MenuCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MenuCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Race.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ObjectIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ObjectIO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +127,7 @@
       <workItem from="1602652466037" duration="3105000" />
       <workItem from="1602677513668" duration="1339000" />
       <workItem from="1603376337841" duration="2310000" />
-      <workItem from="1603432221519" duration="12364000" />
+      <workItem from="1603432221519" duration="13529000" />
     </task>
     <servers />
   </component>
@@ -171,25 +164,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603350561312" />
-    <state width="1493" height="676" key="GridCell.Tab.0.bottom" timestamp="1603451480423">
+    <state width="1493" height="676" key="GridCell.Tab.0.bottom" timestamp="1603454237116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="676" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603451480423" />
+    <state width="1493" height="676" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603454237116" />
     <state width="1215" height="378" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603360581434" />
-    <state width="1493" height="676" key="GridCell.Tab.0.center" timestamp="1603451480423">
+    <state width="1493" height="676" key="GridCell.Tab.0.center" timestamp="1603454237115">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="676" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603451480423" />
+    <state width="1493" height="676" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603454237115" />
     <state width="1215" height="378" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603360581434" />
-    <state width="1493" height="676" key="GridCell.Tab.0.left" timestamp="1603451480423">
+    <state width="1493" height="676" key="GridCell.Tab.0.left" timestamp="1603454237115">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="676" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603451480423" />
+    <state width="1493" height="676" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603454237115" />
     <state width="1215" height="378" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603360581434" />
-    <state width="1493" height="676" key="GridCell.Tab.0.right" timestamp="1603451480423">
+    <state width="1493" height="676" key="GridCell.Tab.0.right" timestamp="1603454237116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="676" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603451480423" />
+    <state width="1493" height="676" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603454237116" />
     <state width="1215" height="378" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603360581434" />
     <state x="584" y="351" key="ReplaceDuplicatesPrompt" timestamp="1603443237146">
       <screen x="0" y="0" width="1536" height="834" />

@@ -3,17 +3,18 @@ import Model.Leaderboard;
 import java.io.*;
 
 public class ObjectIO {
-
+//Use final block (close streamsĄĄ)
     public static void WriteObjectToFile(Leaderboard leaderboard) {
-        try {
-            FileOutputStream fileOut = new FileOutputStream(new File("lastSave.txt"));
-            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+        try(ObjectOutputStream objectOut = new ObjectOutputStream(new FileOutputStream(new File("lastSave.txt")))) {
             objectOut.writeObject(leaderboard);
             objectOut.close();
             System.out.println("Leaderboard saved");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+//        } finally {
+//            objectOut.close)
+//        }
     }
 
     public static Leaderboard readObjectFromFile(Leaderboard leaderboard) throws IOException, ClassNotFoundException {
