@@ -10,27 +10,25 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Race {
-    public static Boolean start(Leaderboard leaderboard){
+    private int sentenceCount;
+    private Leaderboard leaderboard;
+    private SentenceGenerator sentenceGenerator = new SentenceGenerator();
+
+    public Race(int sentenceCount, Leaderboard leaderboard) {
+        this.sentenceCount = sentenceCount;
+        this.leaderboard = leaderboard;
+    }
+
+    public Boolean start(){
         ArrayList<Player> players = leaderboard.getPlayers();
         Player player = PlayerController.createPlayer(players);
         if(player == null){
             return false;
         }
         Scanner scanner = new Scanner(System.in);
-        String sentence;
-        int repeat = 4;
         ArrayList<String> givenWords = new ArrayList<>();
-        SentenceGenerator sentenceGenerator = new SentenceGenerator();
-        while (repeat != 0) {
-            sentence = sentenceGenerator.getSentence();
-            System.out.print(sentence.substring(0, 1).toUpperCase() + sentence.substring(1));
 
-            String[] words = sentence.split("\\s");
-            for(String word: words){
-                givenWords.add(word);
-            }
-            repeat = repeat - 1;
-        }
+        createSentences(givenWords);
 
         System.out.println();
         System.out.println("Repeat:");
@@ -55,5 +53,18 @@ public class Race {
         System.out.println("Enter any key to continue...");
         scanner.nextLine();
         return true;
+    }
+
+    private void createSentences(ArrayList<String> givenWords) {
+        while (sentenceCount != 0) {
+            String sentence = sentenceGenerator.getSentence();
+            System.out.print(sentence.substring(0, 1).toUpperCase() + sentence.substring(1));
+
+            String[] words = sentence.split("\\s");
+            for(String word: words){
+                givenWords.add(word);
+            }
+            sentenceCount = sentenceCount - 1;
+        }
     }
 }

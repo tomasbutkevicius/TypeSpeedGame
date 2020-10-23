@@ -7,7 +7,8 @@ public enum MenuCommand {
                 {
                     @Override
                     public Leaderboard execute(Leaderboard leaderboard) {
-                        Race.start(leaderboard);
+                        Race race = new Race(4, leaderboard);
+                        race.start();
                         return leaderboard;
                     }
                 },
