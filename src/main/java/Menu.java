@@ -1,3 +1,4 @@
+import Creator.SentenceGenerator;
 import Model.Leaderboard;
 import Model.Race;
 

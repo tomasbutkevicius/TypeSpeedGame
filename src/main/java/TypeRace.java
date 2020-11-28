@@ -1,4 +1,6 @@
 import Controller.PlayerController;
+import Creator.SentenceFactory;
+import Creator.SentenceGenerator;
 import Model.Leaderboard;
 import Model.Player;
 import Model.Race;
@@ -28,9 +30,14 @@ public class TypeRace extends Race {
             return;
         }
         Scanner scanner = new Scanner(System.in);
-        List<String> givenWords = new ArrayList<>();
 
-        createSentences(givenWords);
+
+        SentenceFactory sentenceFactory = new SentenceFactory(sentenceGenerator);
+        String sentences = sentenceFactory.getSentences(sentenceCount);
+
+        String[] givenWords = sentences.split("\\s");
+
+        System.out.println(sentences);
 
         System.out.println();
         System.out.println("Repeat:");
@@ -38,11 +45,11 @@ public class TypeRace extends Race {
         handleUserInput(players, player, scanner, givenWords);
     }
 
-    private void handleUserInput(List<Player> players, Player player, Scanner scanner, List<String> givenWords) {
+    private void handleUserInput(List<Player> players, Player player, Scanner scanner, String[] givenWords) {
         TimeWatch watch = TimeWatch.start();
         String input = scanner.nextLine();
         Long seconds = watch.time(TimeUnit.SECONDS);
-        List<String> typedWords = new ArrayList(Arrays.asList(input.split("\\s")));
+        String[] typedWords = input.split("\\s");
 
         Double accuracy = GrammarChecker.getAccuracy(givenWords, typedWords);
         final DecimalFormat df = new DecimalFormat("#0.00");
@@ -51,25 +58,12 @@ public class TypeRace extends Race {
             System.out.println("Accuracy was less than 50%. Player disqualified");
             PlayerController.removePlayerFromList(players, player);
         } else {
-            Long wordsPerMinute = (givenWords.size() * 60) / seconds;
+            Long wordsPerMinute = (givenWords.length * 60) / seconds;
             player.setWordsPerMinute(wordsPerMinute);
             player.setAccuracy(accuracy);
             Printer.printPlayerList(leaderboard, player);
         }
         System.out.println("Enter any key to continue...");
         scanner.nextLine();
-    }
-
-    private void createSentences(List<String> givenWords) {
-        while (sentenceCount != 0) {
-            String sentence = sentenceGenerator.getSentence();
-            System.out.print(sentence.substring(0, 1).toUpperCase() + sentence.substring(1));
-
-            String[] words = sentence.split("\\s");
-            for(String word: words){
-                givenWords.add(word);
-            }
-            sentenceCount = sentenceCount - 1;
-        }
     }
 }
