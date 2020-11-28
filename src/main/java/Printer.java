@@ -1,12 +1,12 @@
 import Model.Leaderboard;
 import Model.Player;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Printer {
     public static void printPlayerList(Leaderboard leaderboard, Player player) {
-        ArrayList<Player> players = leaderboard.getPlayers();
+        List<Player> players = leaderboard.getPlayers();
         Collections.sort(players);
         for (int i = 0; i < players.size(); i++) {
             System.out.print(" Place: " + (i + 1) + ", ");
@@ -20,7 +20,7 @@ public class Printer {
     }
 
     public static void printStats(Leaderboard leaderboard) {
-        ArrayList<Player> players = leaderboard.getPlayers();
+        List<Player> players = leaderboard.getPlayers();
         Collections.sort(players);
         for (int i = 0; i < players.size(); i++) {
             System.out.print(" Place: " + (i + 1) + ", ");

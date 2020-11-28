@@ -1,28 +1,27 @@
 package Controller;
 
-import Model.Leaderboard;
 import Model.Player;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PlayerController {
-    public static ArrayList<Player> generatePlayerList() {
-        ArrayList<Player> players = new ArrayList<>();
+    public static List<Player> generatePlayerList() {
+        List<Player> players = new ArrayList<>();
         populatePlayerList(players);
         return players;
     }
 
-
-    public static Player getPlayerByName(ArrayList<Player> players, String name) {
+    public static Player getPlayerByName(List<Player> players, String name) {
         return players.stream().filter(player -> player.getName().equals(name)).findFirst().orElse(null);
     }
 
-    public static Boolean removePlayerFromList(ArrayList<Player> players, Player player) {
+    public static Boolean removePlayerFromList(List<Player> players, Player player) {
         return players.remove(player);
     }
 
-    public static Player createPlayer(ArrayList<Player> players) {
+    public static Player createPlayer(List<Player> players) {
         System.out.println("Enter player name");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
@@ -43,7 +42,7 @@ public class PlayerController {
         return player;
     }
 
-    private static void populatePlayerList(ArrayList<Player> players) {
+    private static void populatePlayerList(List<Player> players) {
         String[] names = {"Average computer typist", "proGamer3000", "Jordan", "Rambo", "Stallone"};
         Long[] wordsPerMinute = {41L, 100L, 50L, 90L, 60L};
         Double[] accuracies = {92D, 98D, 88D, 99D, 90D};

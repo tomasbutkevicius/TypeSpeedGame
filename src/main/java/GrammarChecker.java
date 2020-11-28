@@ -1,8 +1,7 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class GrammarChecker {
-    public static Double getAccuracy(List<String> givenWords, ArrayList<String> typedWords){
+    public static Double getAccuracy(List<String> givenWords, List<String> typedWords){
         Double mistakes = 0.0;
         int length;
 

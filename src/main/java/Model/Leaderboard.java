@@ -1,20 +1,20 @@
 package Model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.List;
 
 public class Leaderboard implements Serializable {
-    private ArrayList<Player> players;
+    private List<Player> players;
 
-    public Leaderboard(ArrayList<Player> players) {
+    public Leaderboard(List<Player> players) {
         this.players = players;
     }
 
-    public void setPlayers(ArrayList<Player> players) {
+    public void setPlayers(List<Player> players) {
         this.players = players;
     }
 
-    public ArrayList<Player> getPlayers() {
+    public List<Player> getPlayers() {
         return players;
     }
 }

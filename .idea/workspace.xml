@@ -24,11 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c216a23d-80c0-43f7-93ab-bd822be73e69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lastSave.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lastSave.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/PlayerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GrammarChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GrammarChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MenuCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MenuCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SentenceGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SentenceGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Leaderboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Leaderboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Printer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TypeRace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TypeRace.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,6 +121,10 @@
       <workItem from="1603376337841" duration="2310000" />
       <workItem from="1603432221519" duration="13529000" />
       <workItem from="1603475884901" duration="2419000" />
+      <workItem from="1603648345584" duration="629000" />
+      <workItem from="1603649196888" duration="608000" />
+      <workItem from="1604992396798" duration="13000" />
+      <workItem from="1606562784402" duration="1167000" />
     </task>
     <servers />
   </component>
@@ -153,9 +157,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1602678843457" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1603350561312">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="592" y="221" key="FileChooserDialogImpl" timestamp="1603648372000">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="592" y="221" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603648372000" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603350561312" />
     <state width="1493" height="676" key="GridCell.Tab.0.bottom" timestamp="1603477096404">
       <screen x="0" y="0" width="1536" height="834" />
@@ -190,6 +195,10 @@
     </state>
     <state x="706" y="332" key="extract.method.dialog/0.0.1536.834@0.0.1536.834" timestamp="1603451421475" />
     <state x="690" y="276" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602493277585" />
+    <state x="2587" y="119" width="586" height="801" key="find.popup" timestamp="1606563948642">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2587" y="119" width="586" height="801" key="find.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606563948642" />
     <state x="274" y="75" key="new project wizard" timestamp="1602677941532">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

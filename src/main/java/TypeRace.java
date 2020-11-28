@@ -6,6 +6,7 @@ import Model.Race;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -21,13 +22,13 @@ public class TypeRace extends Race {
     }
 
     public void start(){
-        ArrayList<Player> players = leaderboard.getPlayers();
+        List<Player> players = leaderboard.getPlayers();
         Player player = PlayerController.createPlayer(players);
         if(player == null){
             return;
         }
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> givenWords = new ArrayList<>();
+        List<String> givenWords = new ArrayList<>();
 
         createSentences(givenWords);
 
@@ -37,11 +38,11 @@ public class TypeRace extends Race {
         handleUserInput(players, player, scanner, givenWords);
     }
 
-    private void handleUserInput(ArrayList<Player> players, Player player, Scanner scanner, ArrayList<String> givenWords) {
+    private void handleUserInput(List<Player> players, Player player, Scanner scanner, List<String> givenWords) {
         TimeWatch watch = TimeWatch.start();
         String input = scanner.nextLine();
         Long seconds = watch.time(TimeUnit.SECONDS);
-        ArrayList<String> typedWords = new ArrayList(Arrays.asList(input.split("\\s")));
+        List<String> typedWords = new ArrayList(Arrays.asList(input.split("\\s")));
 
         Double accuracy = GrammarChecker.getAccuracy(givenWords, typedWords);
         final DecimalFormat df = new DecimalFormat("#0.00");
@@ -59,7 +60,7 @@ public class TypeRace extends Race {
         scanner.nextLine();
     }
 
-    private void createSentences(ArrayList<String> givenWords) {
+    private void createSentences(List<String> givenWords) {
         while (sentenceCount != 0) {
             String sentence = sentenceGenerator.getSentence();
             System.out.print(sentence.substring(0, 1).toUpperCase() + sentence.substring(1));
