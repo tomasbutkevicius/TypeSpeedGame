@@ -1,7 +1,7 @@
 import java.util.concurrent.TimeUnit;
 
 public class TimeWatch {
-    long starts;
+    private long starts;
 
     public static TimeWatch start() {
         return new TimeWatch();

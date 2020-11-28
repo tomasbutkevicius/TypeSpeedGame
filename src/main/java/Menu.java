@@ -12,27 +12,27 @@ public class Menu {
         while (!command.equals("exit")) {
             printMenuInformation();
             command = scanner.next();
-            switch (MenuCommand.valueOf(command.toUpperCase())){
-                case START:
-                    Race typeRace = new TypeRace(4, leaderboard, new SentenceGenerator());
-                    typeRace.start();
-                    break;
-                case STATS:
-                    Printer.printStats(leaderboard);
-                    break;
-                case SAVE:
-                    ObjectIO.WriteObjectToFile(leaderboard);
-                    break;
-                case LOAD:
-                    leaderboard = ObjectIO.readObjectFromFile(leaderboard);
-                    break;
-                case EXIT:
-                    break;
-                default:
-                    System.out.println("Invalid command");
+
+            if(validateCommand(command))
+                switch (MenuCommand.valueOf(command.toUpperCase())){
+                    case START:
+                        Race typeRace = new TypeRace(4, leaderboard, new SentenceGenerator());
+                        typeRace.start();
+                        break;
+                    case STATS:
+                        Printer.printStats(leaderboard);
+                        break;
+                    case SAVE:
+                        ObjectIO.WriteObjectToFile(leaderboard);
+                        break;
+                    case LOAD:
+                        leaderboard = ObjectIO.readObjectFromFile(leaderboard);
+                        break;
+                    case EXIT:
+                        break;
+                } else System.out.println("Invalid command");
             }
         }
-    }
 
     private static void printMenuInformation() {
         System.out.println("\nPlease choose an action:\n"
@@ -42,6 +42,17 @@ public class Menu {
                 + "\t load - load last save\n"
                 + "\t exit - exit system\n"
         );
+    }
+
+    public static boolean validateCommand(String test) {
+
+        for (MenuCommand c : MenuCommand.values()) {
+            if (c.name().equals(test.toUpperCase())) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
 

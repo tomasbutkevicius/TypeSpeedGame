@@ -3,9 +3,9 @@ package Model;
 import java.io.Serializable;
 
 public class Player implements Comparable<Player>, Serializable {
-    String name;
-    Long wordsPerMinute;
-    Double accuracy;
+    private String name;
+    private Long wordsPerMinute;
+    private Double accuracy;
 
     public Player(String name, Long wordsPerMinute, Double accuracy) {
         this.name = name;
