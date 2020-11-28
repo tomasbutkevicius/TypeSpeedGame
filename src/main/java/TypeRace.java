@@ -4,10 +4,9 @@ import Creator.SentenceGenerator;
 import Model.Leaderboard;
 import Model.Player;
 import Model.Race;
+import view.StatisticsPrinter;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -24,8 +23,8 @@ public class TypeRace extends Race {
     }
 
     public void start(){
-        List<Player> players = leaderboard.getPlayers();
-        Player player = PlayerController.createPlayer(players);
+        List<Player> playerList = leaderboard.getPlayers();
+        Player player = PlayerController.createPlayer(playerList);
         if(player == null){
             return;
         }
@@ -35,33 +34,31 @@ public class TypeRace extends Race {
         SentenceFactory sentenceFactory = new SentenceFactory(sentenceGenerator);
         String sentences = sentenceFactory.getSentences(sentenceCount);
 
-        String[] givenWords = sentences.split("\\s");
-
         System.out.println(sentences);
 
         System.out.println();
         System.out.println("Repeat:");
 
-        handleUserInput(players, player, scanner, givenWords);
+        handleUserInput(playerList, player, scanner, sentences);
     }
 
-    private void handleUserInput(List<Player> players, Player player, Scanner scanner, String[] givenWords) {
+    private void handleUserInput(List<Player> playerList, Player player, Scanner scanner, String givenWords) {
         TimeWatch watch = TimeWatch.start();
-        String input = scanner.nextLine();
+        String typedWords = scanner.nextLine();
         Long seconds = watch.time(TimeUnit.SECONDS);
-        String[] typedWords = input.split("\\s");
 
         Double accuracy = GrammarChecker.getAccuracy(givenWords, typedWords);
         final DecimalFormat df = new DecimalFormat("#0.00");
         accuracy = Double.parseDouble(df.format(accuracy));
         if(accuracy < 30){
             System.out.println("Accuracy was less than 50%. Player disqualified");
-            PlayerController.removePlayerFromList(players, player);
+            PlayerController.removePlayerFromList(playerList, player);
         } else {
-            Long wordsPerMinute = (givenWords.length * 60) / seconds;
+            String[] givenWordsArray = givenWords.split("\\s");
+            Long wordsPerMinute = (givenWordsArray.length * 60) / seconds;
             player.setWordsPerMinute(wordsPerMinute);
             player.setAccuracy(accuracy);
-            Printer.printPlayerList(leaderboard, player);
+            StatisticsPrinter.printPlayerList(leaderboard, player);
         }
         System.out.println("Enter any key to continue...");
         scanner.nextLine();

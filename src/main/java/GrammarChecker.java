@@ -1,29 +1,25 @@
 public class GrammarChecker {
-    public static Double getAccuracy(String[] givenWords, String[] typedWords) {
-        System.out.print("Given: ");
-        for(String word: givenWords)
-            System.out.print(word + " ");
-        System.out.println("Typed: ");
-        for(String word: typedWords)
-            System.out.print(word + " ");
+    public static Double getAccuracy(String givenWords, String typedWords) {
+        String[] givenWordsArray = givenWords.split("\\s");
+        String[] typedWordsArray = givenWords.split("\\s");
 
         Double mistakes = 0.0;
         int length;
-        System.out.println(givenWords.length);
-        System.out.println(typedWords.length);
+        System.out.println(givenWordsArray.length);
+        System.out.println(typedWordsArray.length);
 
-        if (givenWords.length >= typedWords.length) {
-            length = typedWords.length;
-            mistakes = (double) givenWords.length - length;
+        if (givenWordsArray.length >= typedWordsArray.length) {
+            length = typedWordsArray.length;
+            mistakes = (double) typedWordsArray.length - length;
         } else {
-            length = givenWords.length;
+            length = typedWordsArray.length;
         }
 
         for (int i = 0; i < length; i++) {
-            if (!givenWords[i].equalsIgnoreCase(typedWords[i])) {
+            if (!givenWordsArray[i].equalsIgnoreCase(typedWordsArray[i])) {
                 mistakes += 1.0;
             }
         }
-        return ((double) givenWords.length - mistakes) * 100D / givenWords.length;
+        return ((double) givenWordsArray.length - mistakes) * 100D / givenWordsArray.length;
     }
 }

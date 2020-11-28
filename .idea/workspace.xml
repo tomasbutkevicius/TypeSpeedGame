@@ -25,9 +25,15 @@
     <list default="true" id="c216a23d-80c0-43f7-93ab-bd822be73e69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GrammarChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GrammarChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GrammarCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GrammarCheckerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SentenceGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Creator/SentenceGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/StatisticsPrinter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TypeRace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TypeRace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GrammarCheckerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Menu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Printer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TypeRace.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TypeRace.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +89,14 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="JUnit.GrammarCheckerTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="TypeSpeedGame" />
@@ -121,8 +130,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GrammarCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TypeSpeedGame" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GrammarCheckerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GrammarCheckerTest" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.StartApp" />
       </list>
@@ -150,7 +169,7 @@
       <workItem from="1603649196888" duration="608000" />
       <workItem from="1604992396798" duration="13000" />
       <workItem from="1606562784402" duration="2617000" />
-      <workItem from="1606575826176" duration="4428000" />
+      <workItem from="1606575826176" duration="6893000" />
     </task>
     <servers />
   </component>
@@ -176,6 +195,10 @@
     <state x="612" y="187" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606579664807" />
     <state x="612" y="189" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1603444221562" />
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602492875345" />
+    <state x="551" y="307" width="433" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606582598573">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="551" y="307" width="433" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1606582598573" />
     <state x="266" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603449890601">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -189,28 +212,28 @@
     </state>
     <state x="592" y="221" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603648372000" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603350561312" />
-    <state width="1493" height="606" key="GridCell.Tab.0.bottom" timestamp="1606580793466">
+    <state width="1493" height="606" key="GridCell.Tab.0.bottom" timestamp="1606581029406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="606" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606580793466" />
+    <state width="1493" height="606" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606581029406" />
     <state width="1493" height="676" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603477096404" />
     <state width="1215" height="378" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603360581434" />
-    <state width="1493" height="606" key="GridCell.Tab.0.center" timestamp="1606580793466">
+    <state width="1493" height="606" key="GridCell.Tab.0.center" timestamp="1606581029405">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="606" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606580793466" />
+    <state width="1493" height="606" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606581029405" />
     <state width="1493" height="676" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603477096403" />
     <state width="1215" height="378" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603360581434" />
-    <state width="1493" height="606" key="GridCell.Tab.0.left" timestamp="1606580793466">
+    <state width="1493" height="606" key="GridCell.Tab.0.left" timestamp="1606581029405">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="606" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606580793466" />
+    <state width="1493" height="606" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606581029405" />
     <state width="1493" height="676" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603477096403" />
     <state width="1215" height="378" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603360581434" />
-    <state width="1493" height="606" key="GridCell.Tab.0.right" timestamp="1606580793466">
+    <state width="1493" height="606" key="GridCell.Tab.0.right" timestamp="1606581029406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="606" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606580793466" />
+    <state width="1493" height="606" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606581029406" />
     <state width="1493" height="676" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603477096403" />
     <state width="1215" height="378" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603360581434" />
     <state x="584" y="351" key="ReplaceDuplicatesPrompt" timestamp="1603443237146">
@@ -239,10 +262,10 @@
     </state>
     <state x="274" y="75" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1602677941532" />
     <state x="342" y="216" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1600863202232" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1606579991772">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1606583024967">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606579991772" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606583024967" />
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1603440138844" />
   </component>
 </project>

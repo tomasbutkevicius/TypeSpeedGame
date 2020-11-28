@@ -1,10 +1,12 @@
+package view;
+
 import Model.Leaderboard;
 import Model.Player;
 
 import java.util.Collections;
 import java.util.List;
 
-public class Printer {
+public class StatisticsPrinter {
     public static void printPlayerList(Leaderboard leaderboard, Player player) {
         List<Player> players = leaderboard.getPlayers();
         Collections.sort(players);

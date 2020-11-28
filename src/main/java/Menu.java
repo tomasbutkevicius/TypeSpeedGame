@@ -1,6 +1,7 @@
 import Creator.SentenceGenerator;
 import Model.Leaderboard;
 import Model.Race;
+import view.StatisticsPrinter;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -21,7 +22,7 @@ public class Menu {
                         typeRace.start();
                         break;
                     case STATS:
-                        Printer.printStats(leaderboard);
+                        StatisticsPrinter.printStats(leaderboard);
                         break;
                     case SAVE:
                         ObjectIO.WriteObjectToFile(leaderboard);
