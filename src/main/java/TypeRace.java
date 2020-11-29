@@ -47,7 +47,9 @@ public class TypeRace extends Race {
         String typedWords = scanner.nextLine();
         Long seconds = watch.time(TimeUnit.SECONDS);
 
-        Double accuracy = GrammarChecker.getAccuracy(givenWords, typedWords);
+        GrammarChecker grammarChecker = new GrammarChecker(givenWords, typedWords);
+        Double accuracy = grammarChecker.getAccuracy();
+
         final DecimalFormat df = new DecimalFormat("#0.00");
         accuracy = Double.parseDouble(df.format(accuracy));
         if(accuracy < 30){

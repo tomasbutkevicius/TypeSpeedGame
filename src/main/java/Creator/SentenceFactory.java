@@ -10,7 +10,7 @@ public class SentenceFactory {
     }
 
     public String getSentences(int sentenceCount) {
-        while (sentenceCount != 0) {
+        while (sentenceCount > 0) {
             this.sentences += sentenceGenerator.generateString();
             sentenceCount = sentenceCount - 1;
         }

@@ -1,25 +1,47 @@
 public class GrammarChecker {
-    public static Double getAccuracy(String givenWords, String typedWords) {
-        String[] givenWordsArray = givenWords.split("\\s");
-        String[] typedWordsArray = givenWords.split("\\s");
+    private int mistakeCount;
+    private String[] givenStringArray;
+    private String[] typedStringArray;
+    private Double accuracy;
 
-        Double mistakes = 0.0;
-        int length;
-        System.out.println(givenWordsArray.length);
-        System.out.println(typedWordsArray.length);
+    public GrammarChecker(String givenString, String typedString) {
+        this.givenStringArray = givenString.split("\\s");
+        this.typedStringArray = typedString.split("\\s");
+        this.mistakeCount = calculateMistakeCount();
+        this.accuracy = calculateAccuracy();
+    }
 
-        if (givenWordsArray.length >= typedWordsArray.length) {
-            length = typedWordsArray.length;
-            mistakes = (double) typedWordsArray.length - length;
-        } else {
-            length = typedWordsArray.length;
-        }
+    public Double getAccuracy() {
+        return this.accuracy;
+    }
 
-        for (int i = 0; i < length; i++) {
-            if (!givenWordsArray[i].equalsIgnoreCase(typedWordsArray[i])) {
+    public int getMistakeCount(){
+        return mistakeCount;
+    }
+
+    private Double calculateAccuracy() {
+        return ((double) givenStringArray.length - mistakeCount) * 100D / givenStringArray.length;
+    }
+
+    private int calculateMistakeCount() {
+        int mistakes = 0;
+        if (givenStringArray.length > typedStringArray.length)
+            mistakes = givenStringArray.length - typedStringArray.length;
+
+        int shorterLength = getLengthOfShorter(givenStringArray, typedStringArray);
+        for (int i = 0; i < shorterLength; i++) {
+            if (!givenStringArray[i].equalsIgnoreCase(typedStringArray[i])) {
                 mistakes += 1.0;
             }
         }
-        return ((double) givenWordsArray.length - mistakes) * 100D / givenWordsArray.length;
+        return mistakes;
     }
+
+    private int getLengthOfShorter(String[] arrayA, String[] arrayB) {
+        if (arrayA.length >= arrayB.length) {
+            return arrayB.length;
+        }
+        return arrayA.length;
+    }
+
 }

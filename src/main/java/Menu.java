@@ -15,7 +15,7 @@ public class Menu {
             printMenuInformation();
             command = scanner.next();
 
-            if(validateCommand(command))
+            if(isValidCommand(command))
                 switch (MenuCommand.valueOf(command.toUpperCase())){
                     case START:
                         Race typeRace = new TypeRace(4, leaderboard, new SentenceGenerator());
@@ -46,7 +46,7 @@ public class Menu {
         );
     }
 
-    public static boolean validateCommand(String test) {
+    public static boolean isValidCommand(String test) {
 
         for (MenuCommand c : MenuCommand.values()) {
             if (c.name().equals(test.toUpperCase())) {
