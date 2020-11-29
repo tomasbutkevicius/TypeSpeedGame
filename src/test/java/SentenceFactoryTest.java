@@ -1,5 +1,5 @@
-import Creator.SentenceFactory;
-import Creator.SentenceGenerator;
+import Utilities.SentenceFactory;
+import Utilities.SentenceGenerator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,6 +1,6 @@
 package Model;
 
-import Controller.PlayerController;
+import Interface.Controller.PlayerController;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,7 +13,8 @@ public class Leaderboard implements Serializable {
     }
 
     private static class LeaderboardHolder {
-        public static final Leaderboard leaderboard = new Leaderboard(PlayerController.generatePlayerList());
+        private static PlayerController playerController = new PlayerController();
+        public static final Leaderboard leaderboard = new Leaderboard(playerController.generatePlayerList());
     }
 
 

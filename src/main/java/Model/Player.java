@@ -21,14 +21,6 @@ public class Player implements Comparable<Player>, Serializable {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Double getAccuracy() {
-        return accuracy;
-    }
-
     public void setAccuracy(Double accuracy) {
         this.accuracy = accuracy;
     }

@@ -1,15 +1,14 @@
-import Model.Caretaker;
+import Interface.Controller.PlayerController;
+import Utilities.Caretaker;
 import Model.Leaderboard;
-import Model.Originator;
+import Utilities.Originator;
+import Interface.Menu;
 
 import java.io.IOException;
 
 public class App {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Leaderboard leaderboard = Leaderboard.getInstance();
-        Caretaker caretaker = new Caretaker();
-        Originator originator = new Originator();
-        Menu menu = new Menu(leaderboard, caretaker, originator);
+        Menu menu = new Menu(Leaderboard.getInstance(), new Caretaker(), new Originator(), new PlayerController());
         menu.launch();
     }
 }
