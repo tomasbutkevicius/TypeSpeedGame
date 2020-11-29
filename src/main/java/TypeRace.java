@@ -52,7 +52,7 @@ public class TypeRace extends Race {
 
         final DecimalFormat df = new DecimalFormat("#0.00");
         accuracy = Double.parseDouble(df.format(accuracy));
-        if(accuracy < 30){
+        if(accuracy < 50){
             System.out.println("Accuracy was less than 50%. Player disqualified");
             PlayerController.removePlayerFromList(playerList, player);
         } else {

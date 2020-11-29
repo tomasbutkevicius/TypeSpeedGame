@@ -3,5 +3,7 @@ public enum MenuCommand {
         STATS,
         SAVE,
         LOAD,
+        UNDO,
+        REDO,
         EXIT
 }
