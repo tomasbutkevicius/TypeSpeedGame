@@ -76,7 +76,7 @@ public class Menu {
         leaderboard = ObjectIO.readObjectFromFile(leaderboard);
     }
 
-    private static void printMenuInformation() {
+    private void printMenuInformation() {
         System.out.println("\nPlease choose an action:\n"
                 + "\t start - start game.\n"
                 + "\t stats - see information about players\n"
@@ -87,7 +87,7 @@ public class Menu {
         );
     }
 
-    public static boolean isValidCommand(String test) {
+    private boolean isValidCommand(String test) {
 
         for (MenuCommand c : MenuCommand.values()) {
             if (c.name().equals(test.toUpperCase())) {
