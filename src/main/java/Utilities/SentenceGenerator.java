@@ -3,10 +3,10 @@ package Utilities;
 import java.util.Random;
 
 public class SentenceGenerator implements StringGenerator {
-    private static String Nouns[] = {
+    private static final String Nouns[] = {
             "the plant", "an animal", "a human", "the water", "Jordan", "the tree", "the sky", "the father"
     };
-    private static String Verbs[] = {
+    private static final String Verbs[] = {
             "walks", "controls", "can't find", "swims to", "dances near", "sings to", "screams to", "looks to", "falls from"
     };
 

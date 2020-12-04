@@ -3,7 +3,6 @@ package Interface;
 import Interface.Controller.PlayerController;
 import Utilities.Caretaker;
 import Utilities.Originator;
-import Utilities.SentenceGenerator;
 import Model.*;
 
 import java.io.IOException;
